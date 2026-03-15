@@ -33,6 +33,48 @@ User prompt → Agent plans steps → Agent generates CDP commands
     → If error: read error → fix code → retry
 ```
 
+## Prerequisites (Browser Setup)
+
+Before using this skill, the browser must be **running and attached**.
+Check status first:
+
+```bash
+openclaw browser status
+```
+
+If `running: false` or error `no tab is connected`:
+
+### First-time Setup (Chrome Extension)
+
+1. Install the extension:
+   ```bash
+   openclaw browser extension install
+   openclaw browser extension path
+   ```
+2. Chrome → `chrome://extensions` → enable **Developer mode**
+3. Click **"Load unpacked"** → select the path from step 1
+   (default: `%USERPROFILE%\.openclaw\browser\chrome-extension`)
+4. **Pin** the extension to toolbar
+
+### Every Session
+
+1. Open any Chrome tab
+2. **Click the OpenClaw extension icon** on that tab to attach it
+3. Verify:
+   ```bash
+   openclaw browser status   # should show running: true
+   openclaw browser snapshot  # should return page elements
+   ```
+
+### Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| `no tab is connected` | Click the OpenClaw extension icon on an open Chrome tab |
+| `relay not running` | Run `openclaw browser start` or restart gateway |
+| `node: not found` (WSL) | Use PowerShell/CMD, not WSL, for `openclaw` commands |
+| Extension not showing | Reload at `chrome://extensions`, verify path is correct |
+
 ## OpenClaw Browser CLI Reference
 
 The agent has these built-in CDP tools via `openclaw browser`:
