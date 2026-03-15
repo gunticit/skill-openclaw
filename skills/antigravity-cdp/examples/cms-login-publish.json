@@ -1,0 +1,61 @@
+{
+  "name": "CMS Login & Publish",
+  "description": "Login to a CMS and publish an article",
+  "startUrl": "https://your-cms.com/login",
+  "steps": [
+    {
+      "action": "waitForSelector",
+      "params": { "selector": "input[name='email']" },
+      "description": "Wait for login form"
+    },
+    {
+      "action": "type",
+      "params": { "selector": "input[name='email']", "text": "admin@example.com" },
+      "description": "Enter email"
+    },
+    {
+      "action": "type",
+      "params": { "selector": "input[name='password']", "text": "your-password" },
+      "description": "Enter password"
+    },
+    {
+      "action": "click",
+      "params": { "selector": "button[type='submit']" },
+      "description": "Click login",
+      "waitAfter": 3000
+    },
+    {
+      "action": "waitForSelector",
+      "params": { "selector": ".dashboard" },
+      "description": "Verify login success",
+      "verify": "document.querySelector('.dashboard') !== null"
+    },
+    {
+      "action": "navigate",
+      "params": { "url": "https://your-cms.com/posts/new" },
+      "description": "Go to new post page",
+      "waitAfter": 2000
+    },
+    {
+      "action": "type",
+      "params": { "selector": "input[name='title']", "text": "My New Article" },
+      "description": "Enter article title"
+    },
+    {
+      "action": "type",
+      "params": { "selector": "textarea[name='content']", "text": "Article content goes here..." },
+      "description": "Enter article content"
+    },
+    {
+      "action": "click",
+      "params": { "selector": "button.publish" },
+      "description": "Click publish",
+      "waitAfter": 2000
+    },
+    {
+      "action": "screenshot",
+      "params": { "path": "publish-result.png" },
+      "description": "Capture result"
+    }
+  ]
+}

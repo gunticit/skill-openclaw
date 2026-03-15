@@ -1,0 +1,18 @@
+{
+  "name": "antigravity-cdp-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CDP automation engine for antigravity-cdp skill",
+  "scripts": {
+    "start": "ts-node run.ts",
+    "build": "tsc run.ts --outDir dist --esModuleInterop --module commonjs --target es2020"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.7.0"
+  }
+}

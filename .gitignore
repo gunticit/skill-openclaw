@@ -1,0 +1,43 @@
+# ============================================
+# OpenClaw Workspace .gitignore
+# ============================================
+
+# --- OpenClaw internal state ---
+.openclaw/
+
+# --- Memory / session logs (chứa thông tin cá nhân, session-specific) ---
+memory/
+
+# --- Heartbeat (runtime, không cần version control) ---
+HEARTBEAT.md
+
+# --- User profile (chứa thông tin cá nhân) ---
+USER.md
+
+# --- OS generated files ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Node.js (nếu có project con) ---
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# --- Logs ---
+*.log
+
+# --- Temp files ---
+*.tmp
+*.bak
+
+# --- Setup scripts (tải từ remote, không cần track) ---
+setup.ps1
+setup.sh

@@ -1,0 +1,17 @@
+{
+  "name": "saas-automation-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright scripts for saas-automation skill",
+  "scripts": {
+    "start": "ts-node run.ts",
+    "build": "tsc run.ts --outDir dist --esModuleInterop --module commonjs"
+  },
+  "dependencies": {
+    "playwright": "^1.52.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.0",
+    "typescript": "^5.7.0"
+  }
+}
